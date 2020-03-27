@@ -23,8 +23,7 @@ String createDataString() {
   resultData.concat(F(","));
   resultData.concat(F("\n\"bh-current_03\":"));
   resultData.concat(String(current_03, 1));
-  resultData.concat(F(","));
-
+ 
   resultData.concat(F("\n}"));
   resultData.concat(F(","));
   resultData.concat(F("\n\"freeRam\":"));
