@@ -1,6 +1,6 @@
 {
-    "board": "arduino:avr:mega",
-    "configuration": "cpu=atmega2560",
+    "board": "arduino:avr:pro",
+    "configuration": "cpu=16MHzatmega328",
     "programmer": "ArduinoISP.org",
     "sketch": "bh_energy\\bh_energy.ino",
     "port": "COM4"

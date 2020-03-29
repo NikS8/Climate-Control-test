@@ -10,12 +10,11 @@
   Сервер boiler_house_energy выдает данные:
     аналоговые: 
 величины электрического тока 
-    цифровые:
-
+    
 /*****************************************************************************/
 
 //  Блок DEVICE  --------------------------------------------------------------
-//  Arduino Pro Mini
+//  Arduino Mega2560
 #define DEVICE_ID "boiler_house_energy"
 #define VERSION 1
 
@@ -51,21 +50,16 @@ void loop() {
 ////
 unsigned long deltaTime = millis() - currentTime;
   
-  if (deltaTime < 15000)
+  if (deltaTime > 15000)
   {
-    return;
-  }
+    sendTxData();
+    
+    currentTime = millis();
 
-delay(50);
-    digitalWrite(DIR, HIGH);  // включаем передачу
-    delay(50);
-  ETout0.sendData();   
-
-  currentTime = millis();
-
-  delay(30);
+    delay(30);
     digitalWrite(DIR, LOW);  // включаем прием
     delay(33);
+  }
 
     ETin0.receiveData(); // если пришли данные
     receiveDataETin0();

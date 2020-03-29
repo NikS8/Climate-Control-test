@@ -10,13 +10,14 @@ EthernetServer httpServer(40115);
 
 //  Блок EasyTransfer  ------------------------------------------------------
 #define DIR 2            // переключатель прием\передача на Pin2
-int ID;              // номер ардуины
+
 EasyTransfer ETin0, ETout0;  //create  objects
 
 struct SEND_DATA_STRUCTURE {   // структура, которую будем передавать
   int ID;
   char action;
 };
+int ID = 11;              // номер ардуины
 char action = "get";    //  "get"/"set" - запрос выдачи данных / команда на исполнение
 
 struct RECEIVE_DATA_0_STRUCTURE {  // структура, которую будем принимать
