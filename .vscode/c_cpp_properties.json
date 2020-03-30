@@ -4,10 +4,13 @@
             "name": "Win32",
             "includePath": [
                 "D:\\MyProgramms\\Arduino\\tools\\**",
-                "D:\\MyProgramms\\Arduino\\hardware\\arduino\\avr\\**"
+                "D:\\MyProgramms\\Arduino\\hardware\\arduino\\avr\\**",
+                "c:\\FX\\Arduino\\hardware\\arduino\\avr\\**",
+                "c:\\FX\\Arduino\\tools\\**"
             ],
             "forcedInclude": [
-                "D:\\MyProgramms\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+                "D:\\MyProgramms\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h",
+                "c:\\FX\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
             ],
             "intelliSenseMode": "msvc-x64"
         }
