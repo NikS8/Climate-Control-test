@@ -12,9 +12,10 @@ action = "get";    //  "get"/"set" - запрос выдачи данных / к
     txdata.action = action;
     
     delay(30);   
-    ETout.sendData();
+    ETout1.sendData();
     delay(30);   
-}
+    
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+ 

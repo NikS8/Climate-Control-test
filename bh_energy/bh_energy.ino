@@ -20,7 +20,7 @@
 
 //  Блок libraries  -----------------------------------------------------------
 #include <Ethernet2.h>          //  httpServer (40115) pins D10,D11,D12,D13
-#include <EasyTransfer.h>            //   pins D2, D18, D19 
+#include <SoftEasyTransfer.h>            //   pins D7, D8, D9
 
 //  Блок settings  ------------------------------------------------------------
 #include "bh_energy_init.h"
@@ -38,7 +38,7 @@ void setup() {
   Serial.println("Serial.begin(9600)"); 
 
   httpServerSetup();
-  EasyTransferSetup();
+  SoftEasyTransfer();
 
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
@@ -61,8 +61,8 @@ unsigned long deltaTime = millis() - currentTime;
     delay(33);
   }
 
-    ETin0.receiveData(); // если пришли данные
-    receiveDataETin0();
+    ETin1.receiveData(); // если пришли данные
+    receiveDataETin1();
 
 //  resetWhen30Days();
 
@@ -75,4 +75,5 @@ unsigned long deltaTime = millis() - currentTime;
 25.03.2020 v1  
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
             end
-\*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
+\*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+ 

@@ -19,9 +19,9 @@ double current[17];
 #define DIR 13            // переключатель прием\передача на Pin13
 int ID = 11;              // номер этой ардуины
 SoftwareSerial mySerial(12, 11);     // Serial для RS485
-SoftEasyTransfer ETin0, ETout;  //create  objects
+SoftEasyTransfer ETin1, ETout;  //create  objects
 
-struct RECEIVE_DATA_0_STRUCTURE {  // структура, которую будем принимать
+struct RECEIVE_DATA_1_STRUCTURE {  // структура, которую будем принимать
   int ID;
   char action;
 };
@@ -35,7 +35,7 @@ struct SEND_DATA_STRUCTURE {   // структура, которую будем 
 
 //give a name to the group of data
 SEND_DATA_STRUCTURE txdata;
-RECEIVE_DATA_0_STRUCTURE rxdata0;
+RECEIVE_DATA_1_STRUCTURE rxdata0;
 
 
 
