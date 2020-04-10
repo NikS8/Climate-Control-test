@@ -34,11 +34,11 @@ unsigned long currentTime;
             setup
 \*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 void setup() {
-  Serial.begin(9600);
-  Serial.println("Serial.begin(9600)"); 
+  Serial.begin(57600);
+  Serial.println("Serial.begin(57600)"); 
 
   httpServerSetup();
-  SoftEasyTransfer();
+  SoftEasyTransferSetup();
 
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
@@ -52,20 +52,26 @@ unsigned long deltaTime = millis() - currentTime;
   
   if (deltaTime > 15000)
   {
+        digitalWrite(DIR, HIGH);                      // включаем передачу
+delay(111);
     sendTxData();
     
     currentTime = millis();
-
-    delay(30);
+Serial.println(millis()); 
+    delay(1111);
     digitalWrite(DIR, LOW);  // включаем прием
-    delay(33);
+    delay(111);
   }
-
-    ETin1.receiveData(); // если пришли данные
+//  if(ETin1.receiveData()){ // если пришли данные
+  
+//    Serial.println("     If  (ETin1.receiveData())");
+  
+  
     receiveDataETin1();
-
+  //  } 
+  
 //  resetWhen30Days();
-
+ 
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\

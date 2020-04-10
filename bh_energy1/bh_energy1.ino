@@ -32,11 +32,14 @@
             setup
 \*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 void setup() {
-  Serial.begin(9600);
-  Serial.println("Serial.begin(9600)");
+  Serial.begin(57600);
+  Serial.println("Serial.begin(57600)");
 
   emonMultipleSetup();
   SoftEasyTransferSetup();
+
+digitalWrite(DIR, LOW);  // включаем прием
+  delay(3333);
 
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
@@ -45,10 +48,10 @@ void setup() {
 void loop() {
 
   delay(30);
-  digitalWrite(DIR, LOW);  // включаем прием
+  digitalWrite(DIR, HIGH);                      // включаем передачу
   delay(33);
 
-  receiveData();  // если пришли данные
+  receiveRxData();  // если пришли данные
 
   //  resetWhen30Days();
 
